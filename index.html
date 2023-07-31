@@ -2,103 +2,139 @@
 <html lang="ja">
 
 <head>
-    <title>BMS Starter Pack 2022初心者向け難易度表</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bmstable" content="header.json" />
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-    </script>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@T_R_I_A_L" />
+	<meta property="og:title" content="BMS Starter Pack 2022 | トップページ" />
+	<meta property="og:description" content="無料で良い曲すぐ遊べる。そんなステキなBMSパッケージです。" />
+	<meta property="og:image" content="https://TRIALGABBER.github.io/BMS-Starter-Pack-2022/img/card.png" />
+	<meta property="og:url" content="https://TRIALGABBER.github.io/BMS-Starter-Pack-2022/">
+	<title>BMS Starter Pack 2022 | トップページ</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
-    <header class="mb-3">
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1">BMS Starter Pack 2022初心者向け難易度表</span>
-            </div>
-        </nav>
-    </header>
-
-    <div class="container">
-
-        <div class="alert alert-success mb-3" role="alert">
-            <p>BMS Starter Pack 2022初心者向け難易度表</p>
-            <p>難易度表の読み込みと表示に数秒かかります。</p>
-            <hr>
-            <p class="mb-0">説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
-        </div>
-
-
-        <!--ここから難易度表本体-->
-        <div>
-            <table class="table table-light table-striped table-hover" id="table_int">
-            </table>
-        </div>
-        <script language="javascript" type="text/javascript">
-            $(document).ready(function () {
-                $.getJSON($("meta[name=bmstable]").attr("content"), function (header) {
-                    $.getJSON(header.data_url, function (information) {
-                        makeBMSTable(information, header.symbol);
-                    });
-                });
-            });
-
-            function makeBMSTable(info, mark) {
-                var x = "";
-                var ev = "";
-                var count = 0;
-                var obj = $("#table_int");
-
-                obj.html("");
-                $("<thead class='table-dark'><tr><th>Level</th><th>Title</th><th>Artist</th><th>Comment</th></tr></thead><tbody>")
-                    .appendTo(obj);
-                var obj_sep = null;
-                for (var i = 0; i < info.length; i++) {
-                    if (x != info[i].level) {
-                        if (obj_sep != null) {
-                            obj_sep.html("<td colspan='4'>" + "<b>" + mark + x + " (" + count +
-                                "譜面)</b></td>");
-                        }
-                        obj_sep = $("<tr class='table-dark' style='text-align:center' id='" + mark + info[i].level +
-                            "'></tr>");
-                        obj_sep.appendTo(obj);
-                        count = 0;
-                        x = info[i].level;
-                    }
-
-                    var str = $("<tr></tr>");
-
-                    // Level
-                    $("<td width='5%'>" + mark + x + "</td>").appendTo(str);
-
-                    // Title
-                    $("<td width='45%'>" +
-                        "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[
-                            i]
-                        .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
-
-                    // Artist
-                    $("<td width='40%'>" + info[i].artist + "</td>").appendTo(str);
-
-                    // Comment
-                    $("<td width='10%'>" + info[i].comment + "</td>").appendTo(str);
-                    str.appendTo(obj);
-                    count++;
-
-                }
-                $("</tbody>").appendTo(obj);
-
-                if (obj_sep != null) {
-                    obj_sep.html("<td class='table-dark' style='text-align:center' colspan='4'>" + "<b>" + mark + x +
-                        " (" + count + "譜面)</b></td>");
-                }
-            }
-        </script>
-    </div>
+	<div id="particle"></div>
+	<video src="./img/fv.mp4" poster="" autoplay loop></video>
+	<nav class="sp-nav"></nav>
+	<div class="fv">
+		<div class="fv-title">
+			<p>BMS</p>
+			<p>STARTER</p>
+			<p>PACK</p>
+			<p>2022</p>
+		</div>
+	</div>
+	<main>
+		<header>
+			<div class="header-container">
+				<a class="header-select" href="index.html">
+					<p>トップページ</p>
+				</a>
+				<a class="header-nonselect" href="guide.html">
+					<p>遊び方 & DL</p>
+				</a>
+				<a class="header-nonselect" href="list.html">
+					<p>収録曲リスト</p>
+				</a>
+			</div>
+		</header>
+		<section id="screenshot">
+			<div class="section-contents">
+				<div class="swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="./img/screen-shot-4.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/screen-shot-5.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/screen-shot-2.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/screen-shot-3.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/screen-shot-1.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="./img/screen-shot-6.jpg" alt=""></div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+		</section>
+		<section id="news" class="bg-blue">
+			<div class="section-contents">
+				<div class="news-contents">
+					<h2>NEWS</h2>
+					<ul class="news-list">
+						<li class="news-item"><p>2023.XX.XX</p><p>サイト公開</p></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section id="about">
+			<div class="section-contents">
+				<h1>BMS Starter Pack とは</h1>
+				<div class="about-deka-container">
+					<p class="about-deka">無料で！</p>
+					<p class="about-deka">良い曲！</p>
+					<p class="about-deka">すぐ遊べる！</p>
+				</div>
+				<p>そんなステキなBMSパッケージです。たのしいよ。</p>
+			</div>
+		</section>
+		<section id="demo" class="bg-blue">
+			<div class="section-contents">
+				<h1>プレイ動画</h1>
+				<div class="demo-contents">
+					<div class="movie-wrap">
+						<iframe width="1280" height="720" src="https://www.youtube.com/embed/fpf_3qSFGJ8" title="Demo Play BMS Starter Pack 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+			</div>
+			</div>
+		</section>
+		<section id="detail">
+			<div class="section-contents">
+				<h1>詳細</h1>
+				<div class="detail-contents">
+					<p>　BMS Starter Pack 2022とは、Windows上で動作するフリーの音楽ゲームパッケージです。そもそも"BMS"とは、ビートマニアシリーズを模したシミュレーターやフォーマットの総称であり、音や映像・ゲームにおけるオブジェ配置まで含めた楽曲データを自作することもできるため、1998年頃から2023年の現在に至るまで多くの「BMS作家」がオリジナルやカバーの楽曲データを制作・発表しています。</p>
+					<p>　このようにBMSはとてもエキサイティングで面白いものではあるのですが、最大の欠点として導入の煩雑さが挙げられます。楽曲データは一箇所ではなく、各作者のWebサイトや各種BMSイベントなどバラバラに公開されている上、1曲ずつダウンロードしてインストールする手間はもちろんのこと、Beatorajaなどに代表されるBMSプレイヤー本体の導入も容易ではありません。
+					</p>
+					<p>　そこで、BMS StarterPackでは、BeatorajaというBMSプレイヤー本体と150曲(2018～2022より各年30曲ずつ)のBMS楽曲データを同梱し、導入の手間を最小限に留めています。楽曲データについても、特に高品質な作品を厳選しており、音楽ゲームに収録されているものをメインとしてなるべくジャンルを偏らせずキャッチーな作品を中心に収録しています。
+					</p>
+					<p>　さらに、元々単独で公開されている楽曲を集めて収録しているため、難易度バランスに偏りのないよう新規に譜面を制作し追加しています。BMSというフォーマットの特性上ファイルサイズが大きいため、音質や画質の劣化と引き換えに作者自身が公開する低容量版を優先して収録しています。また、Beatoraja向けにパッケージをチューニングしている為、LR2では正常に動作しないものも入っています。
+					</p>
+					<p>　このBMS Starter Packをきっかけに、少しでもBMSに興味を持っていただければ幸いです。</p>
+				</div>
+			</div>
+		</section>
+		<section id="staff" class="bg-blue">
+			<div class="section-contents">
+				<h3>制作スタッフ</h3>
+				<div class="staff-item">
+					<p class="staff-position">Produce, Direction</p>
+					<p class="staff-name">TRIAL <a href="https://twitter.com/T_R_I_A_L">(Twitter:@T_R_I_A_L)</a></p>
+				</div>
+				<div class="staff-item">
+					<p class="staff-position">Game Design</p>
+					<p class="staff-name">TRIAL, BAECON, kooridori, NASA, saaa, Yosk!, K4Y5, rat, 空読無 白眼</p>
+				</div>
+				<div class="staff-item">
+					<p class="staff-position">Web Design</p>
+					<p class="staff-name">TRIAL, 空読無 白眼</p>
+				</div>
+				<div class="staff-item">
+					<p class="staff-position">Special Thanks</p>
+					<p class="staff-name">Yamajet</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p>@2023 BMS STARTER PACK</p>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script src="./js/slide.js"></script>
+	<script src="./js/particles.min.js"></script>
+	<script src="./js/app.js"></script>
+</body>
 
 </html>
