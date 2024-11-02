@@ -431,6 +431,7 @@ footer p {
   text-align: center;
   margin-bottom: 2.5rem;
   transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
 }
 .package-container a .material-symbols-rounded {
   margin: 3rem 0;
